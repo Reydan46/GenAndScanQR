@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GenAndScan QR</string>
+    <string name="butt_scan_qr">Сканировать QR</string>
+    <string name="butt_gen_qr">Генерировать QR</string>
+    <string name="menu_main_about_message">Программа была разработана студентом группы 681073 Сидельниковым Андреем Григорьевичем</string>
+    <string name="menu_about">О программе</string>
+    <string name="menu_main_about_title">О программе</string>
+    <string name="menu_main_about_ok">Ок</string>
+    <string name="menu_exit">Выход</string>
+</resources>
