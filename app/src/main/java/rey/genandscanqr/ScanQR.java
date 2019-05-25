@@ -12,6 +12,9 @@ import ParseQR.wifi.WifiCard;
 import ParseQR.wifi.WifiCardParser;
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.PointF;
@@ -313,6 +316,12 @@ public class ScanQR extends AppCompatActivity implements ActivityCompat.OnReques
             if (pointsOverlayView.getVisibility() != View.VISIBLE)
             {
                 Log.d("TextQR", '"' + text + '"');
+                ClipboardManager clipboard = (ClipboardManager) ScanQR.this.getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("", text);
+                if (clipboard != null)
+                {
+                    clipboard.setPrimaryClip(clip);
+                }
                 Log.d("TextQR", parseTextQR(text));
                 wv_result.loadDataWithBaseURL(null, "<style>" +
                         "html {background-color:transparent}" +
